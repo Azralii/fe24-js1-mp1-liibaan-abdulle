@@ -89,7 +89,7 @@ for (let i = 0; i < arrays.length; i++) {
     column.style.display = 'flex';
     column.style.flexDirection = 'column';
     column.style.margin = '40px';
-    column.style.border = '10px solid lightsteelblue';  // Grå kant runt varje kolumn
+    column.style.border = '10px solid purple';  // Grå kant runt varje kolumn
     column.style.padding = '0px';
 
     // Loopa igenom varje array (kolumnens innehåll)
@@ -106,10 +106,15 @@ for (let i = 0; i < arrays.length; i++) {
             cell.style.color = 'black';  // Svart text
         }
 
-        // Grå kant runt varje cell
-        cell.style.border = '0px solid grey';
-        cell.style.padding = '0px';
-        
+      // Anpassa specifika celler till lila
+      if (
+        (i === 0 && j === 5) || // Kolumn 1, cell 4
+        (i === 1 && j === 1) || // Kolumn 2, cell 8
+        (i === 2 && j === 5)    // Kolumn 3, cell 6
+    ) {
+        cell.style.backgroundColor = 'purple';  // Lila bakgrund
+        cell.style.color = 'white';            // Vit text
+    }
 
         // Justera textjustering beroende på kolumn
         if (i === 0) {
